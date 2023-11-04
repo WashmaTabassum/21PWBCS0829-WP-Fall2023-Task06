@@ -38,3 +38,114 @@ h5{
 #btn:hover {
     background-color:rgb(159, 78, 159);
 }
+
+/* Default styles for all screen sizes */
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+
+@media (min-width: 992px) {
+    .container {
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    h5 {
+        font-size: 14px;
+    }
+
+    h6 {
+        font-size: 12px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 992px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+
+    h6 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    h3 {
+        font-size: 36px;
+    }
+
+    h4 {
+        font-size: 32px;
+    }
+
+    h5 {
+        font-size: 28px;
+    }
+
+    h6 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
