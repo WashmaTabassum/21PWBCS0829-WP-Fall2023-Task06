@@ -1,3 +1,31 @@
 #display-screen{
-    background-color: rgb(162, 146, 177);
+    background-color: rgb(217, 213, 222);
+}
+#inner-screen{
+    background-color: aliceblue;
+}
+
+ #head{
+    background-color: blueviolet;
+} 
+
+h5{
+    background-color: blueviolet;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+
+}
+
+#btn {
+    background-color: blueviolet;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#btn:hover {
+    background-color:rgb(159, 78, 159);
 }
