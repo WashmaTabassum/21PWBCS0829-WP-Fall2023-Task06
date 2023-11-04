@@ -8,6 +8,43 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <script>
+        var books = [];
+        function addBook() {
+            var title = document.getElementById("title").value;
+            var author = document.getElementById("author").value;
+            var isbn = document.getElementById("isbn").value;
+            var exists = false;
+
+            for (var i = 0; i < books.length; i++) {
+                    if (books[i].isbn == isbn) {
+                        exists = true;
+                        break;
+                }
+            }
+
+            if (exists) {
+                alert("This book already exists in the list.");
+            } 
+            else {  
+                var newBook = {
+                title: title,
+                author: author,
+                isbn: isbn
+            };
+            }
+        books.push(newBook);
+        var bookList = document.getElementById("bookList");
+        var newLi = document.createElement("li");
+        newLi.innerHTML = `${newBook.title} by ${newBook.author} ISBN:${newBook.isbn}`;
+        bookList.appendChild(newLi);
+        // Clear input fields
+        document.getElementById("title").value = "";
+        document.getElementById("author").value = "";
+        document.getElementById("isbn").value = "";
+        alert("Book added!");
+        }
+</script>
 </head>
   <body class="bg">
     <div class="container mt-5">
@@ -27,10 +64,10 @@
                     <div class="col">
                         <div class="container-lg p-3  text-center">
                             <h5 class="py-2">Book List</h5>
-                            <ol>
-                                <li>Hacking: The Art of Exploitation by Jon Erickson <span><p><small>ISBN:978-1593271442</small></p></span></li>
-                                <li>Introduction to the Theory of Computation by Michael Sipser ISBN:978-1133187790</li>
-                                <li>Eloquent Javascript:A Modern Introduction to Programming by Marijn Haverbeke ISBN:978-1593279509</li>
+                            <ol id="bookList">
+                                <li id="one">Hacking: The Art of Exploitation by Jon Erickson ISBN:978-1593271442</li>
+                                <li id="two">Introduction to the Theory of Computation by Michael Sipser ISBN:978-1133187790</li>
+                                <li id="three">Eloquent Javascript:A Modern Introduction to Programming by Marijn Haverbeke ISBN:978-1593279509</li>
                                 
                             </ol>
                         </div>
@@ -39,16 +76,18 @@
                         <div class="container-lg p-3  text-center">
                             <h5 class="py-2">Add Books</h5>
                             <div class="mb-3">
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Title">
+                                <form action="/submit" method="POST" >
+                                <input type="text" class="form-control" id="title" placeholder="Title">
                               </div>
                               <div class="mb-3">                              
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Author">
+                                <input type="text" class="form-control" id="author" placeholder="Author">
                               </div>
                               <div class="mb-3">                              
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="ISBN">
+                                <input type="text" class="form-control" id="isbn" placeholder="ISBN">
                               </div>
-                              <button type="button" id="btn" class="btn btn-primary my-3">Add Book</button>
-                        </div>
+                              <button type="button" id="btn" class="btn btn-primary my-3" onclick="addBook()">Add Book</button>
+                            </form>
+                            </div>
                     </div>
                     <div class="col">
                         <div class="container-lg p-3  text-center">
