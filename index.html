@@ -25,6 +25,7 @@
 
             if (exists) {
                 alert("This book already exists in the list.");
+                return;
             } 
             else {  
                 var newBook = {
@@ -43,7 +44,7 @@
         document.getElementById("author").value = "";
         document.getElementById("isbn").value = "";
         alert("Book added!");
-        }
+    }
 </script>
 </head>
   <body class="bg">
