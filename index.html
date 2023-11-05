@@ -51,82 +51,6 @@
         alert("Book added!");
     }
 
-//     function search() {
-//     alert('searching');
-//     var searchTerm = document.getElementById('searchInput').value.toLowerCase();
-
-//     var resultsContainer = document.getElementsByClassName('results-container')[0];
-//     resultsContainer.innerHTML = "";
-
-//     for (var i = 0; i < books.length; i++) {
-//         if (books[i].title.toLowerCase().includes(searchTerm)) {
-//             resultsContainer.innerHTML += `
-//                 <div class="book">
-//                     <h3>${books[i].title}</h3>
-//                 </div>
-//             `;
-//         }
-//     }
-
-//     if (resultsContainer.innerHTML == "") {
-//         resultsContainer.innerHTML = "<p>No results found</p>";
-//     }
-// }
-
-// function search(){
-//     alert('searching');
-//     var query = document.getElementById("searchInput").value;
-//     var result = document.getElementById("results-container");
-//     var found = false;
-//     for(var i=0; i<books.length;i++)
-//     {
-//         if (books[i].title == query || books[i].author == query || books[i].isbn == query)
-//         {
-            
-//             found= true;
-            
-//             break;
-//         }
-        
-//     }
-//     console.log(found);
-//     if(found== true)
-//     {
-        
-        
-//             result.innerHTML = `${books[i].title} by ${books[i].author} ISBN: ${books[i].isbn}`;
-//     }
-    
-//             else{
-//             result.innerHTML = "<p>No results found</p>";
-//         }
-// }
-// up mine
-// function search(){
-//     alert('searching');
-//     var query = document.getElementById("searchInput").value;
-//     var result = document.getElementById("results-container");
-//     var found = false;
-
-//     for(var i = 0; i < books.length; i++) {
-//         if (books[i].title == query || books[i].author == query || books[i].isbn == query) {
-//             var newBook = {
-//                 title: books[i].title,
-//                 author: books[i].author,
-//                 isbn: books[i].isbn
-//             };
-//             found = true;
-//             break;
-//         }
-//     }
-//     var result= document.getElementById("results-container");
-//     result.innerHTML = `${books[i].title} by ${books[i].author} ISBN: ${books[i].isbn}`;
-    
-//     if (!found) {
-//         result.innerHTML = "<p>No results found</p>";
-//     }
-// }
-
 
 function search() {
     
@@ -148,18 +72,12 @@ function search() {
                 <p>ISBN: ${books[i].isbn}</p>
             `;
             resultsContainer.appendChild(bookElement);
-
             return; // Exit the function after displaying the matching book
         }
     }
 
     resultsContainer.innerHTML = "<p>No results found</p>";
 }
-
-
-
-
-
 
     
 </script>
@@ -177,7 +95,7 @@ function search() {
         <div class="row d-flex justify-content-center" >
             <div class="col-lg-11" >
                 <div class="container-lg p-3 shadow-lg text-center" id="inner-screen">
-
+                    <!-- book list -->
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-12">
                         <div class="container-lg p-3  text-center">
@@ -190,6 +108,7 @@ function search() {
                             </ol>
                         </div>
                     </div>
+                    <!-- add books -->
                     <div class="col-lg-4 col-md-4 col-sm-12  border-start border-end">
                         <div class="container-lg p-3  text-center">
                             <h5 class="py-2">Add Books</h5>
@@ -207,6 +126,7 @@ function search() {
                             </form>
                             </div>
                         </div>
+                        <!-- search books -->
                     <div class="col-lg-4 col-md-4 col-sm-12">
                         <div class="container-lg p-3  text-center">
                             <h5 class="py-2">Search Books</h5>
